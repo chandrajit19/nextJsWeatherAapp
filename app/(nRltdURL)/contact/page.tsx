@@ -28,7 +28,7 @@ const Contact=()=>{
                             <textarea  name="message" className="form-input" rows={6} cols={27} required></textarea>
                         </label>
                     </div>
-               <div className="g-recaptcha" data-sitekey="6LdPcMQrAAAAAECQDqGFb-ASTYOLsZLBEr7Gkald"></div>
+               <div className="g-recaptcha" data-sitekey="6LfRdcQrAAAAAB2Wyyy0_5md7AjT1pxjeR4Th4YX"></div>
                    <input type="submit" className="form-input" value="Send" />
                 </form>
             </div>
