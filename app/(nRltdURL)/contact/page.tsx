@@ -1,40 +1,35 @@
 "use client"
 
-import { sendEmail } from "@/app/serverFunction"
-
+import { saveData } from "@/app/serverFunction"
+import Script from "next/script";
 const Contact=()=>{
 
-   
-  const saveData=async (fd:FormData)=>{
-     const name=fd.get("name")  as string; 
-     const email=fd.get("email")  as string;
-         sendEmail(email, name)
-  }
-
    return(<div className="contact-page">
-            <div>
+            <div className="contact-info">
                 <h2>Contact</h2>
                 <p>We&apos;d love to hear from you! Please feel free to get in touch with any questions or comments</p>
                 <p>Got a question, a project idea, or just want to say hello? Let&apos;s start the conversation</p>
             </div>
             <div className="contact-form-container">
+                <Script src="https://www.google.com/recaptcha/api.js" async defer></Script>
                 <form action={saveData} className="contact-form">
                     <div>
                         <label >Name: <br />
-                            <input type="text" name="name" required autoFocus/>
+                            <input type="text" className="form-input" name="name" required autoFocus/>
                         </label>
                     </div>
                     <div>
                         <label >Email: <br />
-                            <input type="email" name="email" required />
+                            <input type="email" className="form-input" name="email" required />
                         </label>
                     </div>
                     <div>
                         <label >Message: <br />
-                            <textarea  name="message" rows={6} cols={30} required></textarea>
+                            <textarea  name="message" className="form-input" rows={6} cols={27} required></textarea>
                         </label>
                     </div>
-                   <input type="submit" value="Send" />
+               <div className="g-recaptcha" data-sitekey="6LfoMsQrAAAAAFfF6hV7Qf-8adSBoX8G8DNILztE"></div>
+                   <input type="submit" className="form-input" value="Send" />
                 </form>
             </div>
 

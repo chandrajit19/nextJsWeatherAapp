@@ -22,26 +22,7 @@ header {
   padding: 15px;
   
 }
-input[type="text"], input[type="email"], textarea, input[type="submit"]{
-  padding: 3px;
-  /* font-size: 17px; */
-  border:none;
-  border-radius: 5px;
-  color: #017587e4;
-}
-input[type="text"]:focus,
-input[type="email"]:focus{
-  outline: 1px solid #017587e4;
-}
-textarea:focus{
-  outline: 1px solid #017587e4;
-}
-textarea{
-  font-size: 16px;
-}
-input[type="submit"]{
-   outline: 1px solid #017587e4;
-}
+
 .add{
   background-color: #017587e4;
   color: white;
@@ -93,7 +74,7 @@ background-color: rgb(23, 74, 140);
   vertical-align: middle;
 }
 article {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   margin: 20px 0;
    background-color:#ffffffe4;
@@ -103,6 +84,15 @@ section {
 
   padding: 20px;
   background-color:#c3efefe4;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 20px;
 }
 /* Style the footer */
 .footer-sec{
@@ -119,7 +109,7 @@ section {
 }
 
 .box{
-  width: 250px;
+  width: 350px;
   font-size: 25px;
   box-shadow: 1px 2px 1px gray;
   padding: 15px;
@@ -133,18 +123,29 @@ section {
   font-size: 15px;
 }
 
-.box input[type="button"]{
-  background-color: #017587e4;
-  color: white;
+.box .delete{
+  background-color:transparent;
+  color: rgb(240, 4, 4);
   border: none;
   padding: 5px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
-  border-radius: 3px;
+  font-weight: 900;
+}
+.box .more{
+  background-color:transparent;
+  color: rgb(2, 110, 240);
+  border: none;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 900;
 }
 
 .enterCity{
@@ -160,7 +161,6 @@ section {
 .contact-page{
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   align-items: center;
   gap: 10px;
   padding: 20px;
@@ -169,24 +169,50 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 40px auto;
 }
+.contact-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f8ff;
+  padding: 10px;
+}
+
 .contact-form{
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
-}
-.contact-form-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
-.contact-form input{
-  display: block;
-  width: 100%;
-  padding: 5px;
+.form-input{
+  padding: 3px;
+  border:none;
   border-radius: 5px;
+  color: #017587e4;
+  width: 90%;
+  border: 1px solid gray;
   font-size: 16px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus{
+  outline: 1px solid #017587e4;
+}
+textarea:focus{
+  outline: 1px solid #017587e4;
+}
+textarea{
+  font-size: 16px;
+}
+input[type="submit"]{
+   outline: 1px solid #017587e4;
+   cursor: pointer;
+}
+input[type="submit"]:hover{
+  background-color: #017587e4;
+  color: white;
+  transition: 0.3s;
+  opacity: .8;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
@@ -194,7 +220,6 @@ section {
   nav, article {
     width: 100%;
     height: auto;
-    text-align: center;
   }
   .welcome-message{
     display: none;
@@ -226,13 +251,17 @@ section {
   ol li, ul{
     font-size: 15px;
   }
-  input[type="text"]{
-   width: 100%;
-  }
   .contact-page{
     grid-template-columns: 1fr;
     padding: 10px;
     margin: 20px auto;
+    text-align: left;
   }
-
+ 
+section{
+ padding: 5px ;
 }
+.contact-form-container{
+  padding: 0px;
+}
+} 

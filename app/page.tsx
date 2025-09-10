@@ -82,21 +82,24 @@ if(isSignedIn){
                 <p>You are seeing because you are loged in!</p>
                 <input type="text" value={city} className="enterCity"  onChange={(e)=>{setCity(e.target.value)}} placeholder="Enter city" autoFocus/> &nbsp;
                 <input type="button"  className="add" value="Add city" onClick={handleClick} /> <br />
-                {
-                  records.map((row, i)=>{ return(
-                    <div key={i} className="box">
-                         <h3>{row.city.toUpperCase()}</h3>
-                         <p>
-                          {row.temp}°C <br />
-                          <Image src={row.iconURL} alt={row.city}  width={50} height={50}/> <br />
-                          <input type="button" value="X"  onClick={()=>{handleDelete(row.sno)}}/> <br />
-                          <input type="button" value="more..."  onClick={()=>{router.push(`/details/${row.sno}`)}}/>
-                         </p>
-                    </div>
-                  )
-                     
-                  })
-                }
+                <div className="grid-container">
+                      {
+                        records.map((row, i)=>{ return(
+                          <div key={i} className="box">
+                              <h3>{row.city.toUpperCase()}</h3> 
+                              <p>
+                                {row.temp}°C <br />
+                                <Image src={row.iconURL} alt={row.city}  width={50} height={50}/> <br />
+                                <input type="button" className="delete" value="X" title="Delete" onClick={()=>{handleDelete(row.sno)}}/> <br />
+                                <input type="button" className="more" value="more..." title="More Info" onClick={()=>{router.push(`/details/${row.sno}`)}}/>
+                              </p>
+                          </div>
+                        )
+                          
+                        })
+                      }
+                </div>
+
              </>
 
              :

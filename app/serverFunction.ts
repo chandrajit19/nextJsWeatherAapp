@@ -1,5 +1,6 @@
 "use server"
 
+import Swal from "sweetalert2";
 import sql from "./db"
 
 
@@ -39,9 +40,38 @@ import { Resend } from "resend"
                     await resend.emails.send({
                         from: 'support team <onboarding@ninjatech.space>',
                         to: email,
-                        subject: 'Hello World',
+                        subject: 'Contact Form Submission',
                         html: `<strong>Hi ${name}, </strong>`+mess,
                      });
-                     console.log("Email sent...", email, name)
    }
     
+
+   // form capta server side coading
+
+  export const saveData = async (fd: FormData) => {
+   const name = String(fd.get("name") ?? "");
+   const email = String(fd.get("email") ?? "");
+   const rs=fd.get("g-recaptcha-response") as string;
+
+   const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+   method: "POST",
+      headers: {
+         "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({ secret: "6LfoMsQrAAAAAMKYD2LzZSPEsklxIW5_jn-xlTW-", response:rs }),
+ 
+      });
+
+      const res=await response.json()
+       
+      if(res.success){
+            // database logic goes here
+           sendEmail(email, name)
+      }
+      else{
+          console.log("do not be oversmart")
+      }
+   };
+
+
+ 
