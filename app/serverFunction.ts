@@ -58,7 +58,7 @@ import { Resend } from "resend"
       headers: {
          "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams({ secret: "6LfoMsQrAAAAAMKYD2LzZSPEsklxIW5_jn-xlTW-", response:rs }),
+      body: new URLSearchParams({ secret: "6LdPcMQrAAAAALq-nH5HlfGWaz233ozeF3sxnT7C", response:rs }),
  
       });
 
