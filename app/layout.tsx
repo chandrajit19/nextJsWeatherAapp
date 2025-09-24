@@ -51,16 +51,16 @@ export default function RootLayout({
                  <h3>HOW IT WORKS</h3>
                
                   <ol>
-                    <li>City add/choose karo.</li>
-                    <li>Server se us city ka temperature aata hai.</li>
-                    <li>Seedha checklist dikh jaata hai — kya le jana hai, extra kya useful hai, aur kya savdhaani.</li>
+                    <li>Add/choose the city </li>
+                    <li>Data comes from server of city.</li>
+                    <li>And according to temperature, it gives you ideas.</li>
                   </ol>
              
                  <h3>SAVED CITIES BLURB</h3>
                  <p>Saved Cities: The cities you add are stored with your account and will be visible whenever you log in — no extra setup required.</p>
 
                  <h3>PRIVACY / SECURITY LINE</h3>
-                 <p>We store only minimal city metadata per account. Weather API keys and external calls are handled on the server — your keys are never exposed to the browser.</p>
+                 <p>We store only minimal city metadata per account. Weather API keys and external calls are handled on the server.</p>
                  <p>Practical temperature-based packing tips — fast, focused, and free for learning & personal use.</p>
                  <h3>Features</h3>
                  <ul>
